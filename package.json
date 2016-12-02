@@ -1,0 +1,54 @@
+{
+  "name": "restify-acl",
+  "version": "0.0.1",
+  "description": "Restify ACL middleware",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojengwa/restify-acl.git"
+  },
+  "keywords": [
+    "acl",
+    "restify",
+    "access",
+    "control",
+    "list",
+    "access",
+    "control",
+    "api",
+    "authorisation",
+    "authorization",
+    "restify0acl"
+  ],
+  "author": "Bernard Ojengwa <bernardojengwa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ojengwa/restify-acl/issues"
+  },
+  "homepage": "https://github.com/ojengwa/restify-acl#readme",
+  "dependencies": {
+    "express-unless": "^0.3.0",
+    "js-yaml": "^3.6.0",
+    "lodash": "^4.11.2",
+    "npmlog": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai-spies": "^0.7.1",
+    "chai": "^3.5.0",
+    "codacy-coverage": "^1.1.3",
+    "coveralls": "^2.11.9",
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^0.10.4",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-mocha": "^2.2.0",
+    "istanbul": "^0.4.3",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "mocha": "^2.4.5",
+    "node-mocks-http": "^1.5.2"
+  }
+}
