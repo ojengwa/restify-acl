@@ -126,7 +126,7 @@ restify-acl depends on the role of each authenticated user to pick the correspon
 
 ``` js
   // jsonwebtoken powered middleware
-  ROUTER.use(function(req, res, next) {
+  server.use(function(req, res, next) {
    const token = req.headers['x-access-token'];
     if (token) {
       jwt.verify(token, key, function(err, decoded) {
@@ -144,7 +144,7 @@ restify-acl depends on the role of each authenticated user to pick the correspon
   // the role can either be in req.decoded (jsonwebtoken)or req.session
   // (restify-session)
 
-  ROUTER.use(acl.authorize);
+  server.use(acl.authorize);
 
 ```
 
@@ -175,7 +175,7 @@ This methods loads the configuration json file. When this method it looks for `n
 
 
   acl.config({
-    baseUrl:'api'
+    baseUrl:'api/v1'
   });
 
   // path specified
@@ -226,7 +226,7 @@ app.get(acl.authorize);
 
 ```
 ## unless[type:function, params: function or object]
-By default any route that has no defined policy against it is blocked, this means you cannot access this route untill you specify a policy. This method enables you to exclude unprotected routes. This method uses restify-unless package to achive this functionality. For more details on its usage follow this link [restify-unless](https://github.com/jfromaniello/restify-unless/blob/master/README.md)
+By default any route that has no defined policy against it is blocked, this means you cannot access this route untill you specify a policy. This method enables you to exclude unprotected routes. This method uses express-unless package to achive this functionality. For more details on its usage follow this link [express-unless](https://github.com/jfromaniello/express-unless/blob/master/README.md)
 
 ```js
 //assuming we want to hide /auth/google from restify acl
@@ -237,7 +237,7 @@ app.use(acl.authorize.unless({path:['/auth/google']}));
 
 Anytime that this route is visited, unless method will exlude it from being passed though our middleware.
 
-**N/B** You don't have to install `restify-unless` it has already been included into the project.
+**N/B** You don't have to install `express-unless` it has already been included into the project.
 
 # Example
 Install restify-acl
